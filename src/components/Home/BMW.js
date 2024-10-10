@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { BMW as BMWItems } from "../items"; // Rename import for clarity
-import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa"; // Import thumbs up icons
+import { BMW as BMWItems } from "../items"; 
+import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa";
 
 export default function BMW({ liked, toggleHearts }) {
   const [showItems, setShowItems] = useState([]);
-  const [loading, setLoading] = useState(true); // Default loading state should be true
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     setTimeout(() => {
-      setShowItems(BMWItems); // Use the renamed import
+      setShowItems(BMWItems); 
       console.log(BMWItems);
       setLoading(false);
     }, 1000);
