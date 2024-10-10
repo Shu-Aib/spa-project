@@ -1,15 +1,59 @@
-import React, { useEffect, useState } from "react";
-import { BMW } from "../items";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+// import React, { useEffect, useState } from "react";
+// import { BMW } from "../items";
+// import { FaHeart, FaRegHeart } from "react-icons/fa";
 
-export default function TopWear({ liked, toggleHearts }) {
+// export default function TopWear({ liked, toggleHearts }) {
+//   const [showItems, setShowItems] = useState([]);
+//   const [loading, setLoading] = useState([]);
+
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setShowItems(BMW);
+//       console.log(BMW);
+//       setLoading(false);
+//     }, 1000);
+//   }, []);
+
+//   const displayItems = showItems.map((item) => {
+//     return (
+//       <div key={item.id}>
+//         <div className="items-box">
+//           <img src={item.imageSrc} alt={item.name} className="items" />
+//           <p>{item.name}</p>
+//           {liked[item.id] ? (
+//             <FaHeart
+//               className="heart-icon"
+//               onClick={() => toggleHearts(item)}
+//             />
+//           ) : (
+//             <FaRegHeart
+//               className="heart-icon"
+//               onClick={() => toggleHearts(item)}
+//             />
+//           )}
+//         </div>
+//       </div>
+//     );
+//   });
+//   return (
+//     <div className="items-container">
+//       {loading ? <h1 className="loading-state">Loading...</h1> : displayItems}
+//     </div>
+//   );
+// }
+
+import React, { useEffect, useState } from "react";
+import { BMW as BMWItems } from "../items"; // Rename import for clarity
+import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa"; // Import thumbs up icons
+
+export default function BMW({ liked, toggleHearts }) {
   const [showItems, setShowItems] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(true); // Default loading state should be true
 
   useEffect(() => {
     setTimeout(() => {
-      setShowItems(BMW);
-      console.log(BMW);
+      setShowItems(BMWItems); // Use the renamed import
+      console.log(BMWItems);
       setLoading(false);
     }, 1000);
   }, []);
@@ -21,13 +65,13 @@ export default function TopWear({ liked, toggleHearts }) {
           <img src={item.imageSrc} alt={item.name} className="items" />
           <p>{item.name}</p>
           {liked[item.id] ? (
-            <FaHeart
-              className="heart-icon"
+            <FaThumbsUp
+              className="thumbs-up-icon"
               onClick={() => toggleHearts(item)}
             />
           ) : (
-            <FaRegHeart
-              className="heart-icon"
+            <FaRegThumbsUp
+              className="thumbs-up-icon"
               onClick={() => toggleHearts(item)}
             />
           )}
@@ -35,6 +79,7 @@ export default function TopWear({ liked, toggleHearts }) {
       </div>
     );
   });
+
   return (
     <div className="items-container">
       {loading ? <h1 className="loading-state">Loading...</h1> : displayItems}

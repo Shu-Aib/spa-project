@@ -26,6 +26,7 @@ header ul {
 header li {
     margin: 1rem;
     font-weight: 500;
+    color: #333
 }
 
 /* Shoes */
@@ -83,15 +84,16 @@ header li {
     color: #ffdd57;
 }
 
-.heart-icon {
-    font-size: 24px;
-    color: #ff5252;
+.thumbs-up-icon {
     cursor: pointer;
-    transition: color 0.3s ease;
+    color: rgb(255, 4, 67); 
+    font-size: 1.5em;
+    margin-top: 10px;
 }
 
-.heart-icon:hover {
-    color: #ff8080;
+
+.thumbs-up-icon :hover {
+    color: rgb(255, 4, 67); 
 }
 .home-video{
     display: flex;

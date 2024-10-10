@@ -1,15 +1,59 @@
+// import React, { useEffect, useState } from "react";
+// import { AUDI } from "../items.js";
+// import { FaHeart, FaRegHeart } from "react-icons/fa";
+
+// export default function Audi({ liked, toggleHearts }) {
+//   const [showItems, setShowItems] = useState([]);
+//   const [loading, setLoading] = useState([]);
+
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setShowItems(AUDI);
+//       console.log(AUDI);
+//       setLoading(false);
+//     }, 1000);
+//   }, []);
+
+//   const displayItems = showItems.map((item) => {
+//     return (
+//       <div key={item.id}>
+//         <div className="items-box">
+//           <img src={item.imageSrc} alt={item.name} className="items" />
+//           <p>{item.name}</p>
+//           {liked[item.id] ? (
+//             <FaHeart
+//               className="heart-icon"
+//               onClick={() => toggleHearts(item)}
+//             />
+//           ) : (
+//             <FaRegHeart
+//               className="heart-icon"
+//               onClick={() => toggleHearts(item)}
+//             />
+//           )}
+//         </div>
+//       </div>
+//     );
+//   });
+//   return (
+//     <div className="items-container">
+//       {loading ? <h1 className="loading-state">Loading...</h1> : displayItems}
+//     </div>
+//   );
+// }
+
+
 import React, { useEffect, useState } from "react";
 import { AUDI } from "../items.js";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa"; // Import like icons
 
-export default function Shoes({ liked, toggleHearts }) {
+export default function Audi({ liked, toggleHearts }) {
   const [showItems, setShowItems] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(true); // Default loading state should be true
 
   useEffect(() => {
     setTimeout(() => {
       setShowItems(AUDI);
-      console.log(AUDI);
       setLoading(false);
     }, 1000);
   }, []);
@@ -21,13 +65,13 @@ export default function Shoes({ liked, toggleHearts }) {
           <img src={item.imageSrc} alt={item.name} className="items" />
           <p>{item.name}</p>
           {liked[item.id] ? (
-            <FaHeart
-              className="heart-icon"
+            <FaThumbsUp
+              className="thumbs-up-icon"
               onClick={() => toggleHearts(item)}
             />
           ) : (
-            <FaRegHeart
-              className="heart-icon"
+            <FaRegThumbsUp
+              className="thumbs-up-icon"
               onClick={() => toggleHearts(item)}
             />
           )}
@@ -35,6 +79,7 @@ export default function Shoes({ liked, toggleHearts }) {
       </div>
     );
   });
+
   return (
     <div className="items-container">
       {loading ? <h1 className="loading-state">Loading...</h1> : displayItems}

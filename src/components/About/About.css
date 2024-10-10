@@ -6,16 +6,17 @@ body {
   padding: 0;
 }
 
-.about-header {
-  background-color: #f8f9fa;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #eaeaea;
-}
-
 .about-header__content h1 {
   font-size: 2em;
   margin: 0;
+  color: #ff3c00b2; 
+}
+
+.about-header {
+  background-color: bisque;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .about-header__content p {
@@ -37,7 +38,7 @@ body {
   font-size: 1.2em;
   margin: 20px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: rgba(255, 228, 196, 0.507);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
