@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { AUDI } from "../items.js";
-import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa"; // Import like icons
+import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa"; 
 
 export default function Audi({ liked, toggleHearts }) {
   const [showItems, setShowItems] = useState([]);
-  const [loading, setLoading] = useState(true); // Default loading state should be true
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
