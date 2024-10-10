@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import UserProfile from "./components/UserProfile/UserProfile";
-import TopWear from "./components/Home/BMW";
-import Shoes from "./components/Home/AUDI";
+import BMW from "./components/Home/BMW";
+import AUDI from "./components/Home/AUDI";
 import { useState } from "react";
 
 
@@ -30,8 +30,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Home />}>
-          <Route path="bmw" element={<TopWear liked={liked} toggleHearts={toggleHearts}/>} />
-          <Route path="audi" element={<Shoes liked={liked} toggleHearts={toggleHearts}/>} />
+          <Route path="bmw" element={<BMW liked={liked} toggleHearts={toggleHearts}/>} />
+          <Route path="audi" element={<AUDI liked={liked} toggleHearts={toggleHearts}/>} />
         </Route>
         <Route path="/about" element={<About />} />
         <Route path="/user/:userName" element={<UserProfile  liked={liked} likedItems={addLikedItems} toggleHearts={toggleHearts} />} />
